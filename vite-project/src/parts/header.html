@@ -1,0 +1,24 @@
+<div x-data="{ open: false }">
+    <header>
+        <div class="flex flex-col bg-white w-full lg:flex-row lg:justify-between lg:items-center">
+            <div class="flex flex-row justify-between items-center">
+                <div class="flex items-center">
+                    <img src="/src/img/aigle.png" alt="" class="w-20 m-8">
+                    <p>Ethan</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 lg:hidden cursor-pointer" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" @click="open = !open">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+            <nav class="flex flex-col text-center text-xl lg:flex-row lg:gap-16 lg:pr-16"
+                x-show="open || window.innerWidth >= 1024" x-transition @click.outside="open = false" x-cloak>
+                <a href="" class="text-black py-2">Accueil</a>
+                <a href="" class="text-black py-2">À propos</a>
+                <a href="" class="text-black py-2">Compétences</a>
+                <a href="" class="text-black py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+</div>
