@@ -10,6 +10,7 @@ export default {
       colors: {
         fond: '#FFFAF2',
         text: '#4a0605', 
+        bouton: '#e5181b',
       },
     },
   },
