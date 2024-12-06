@@ -3,7 +3,7 @@ export default function Recettes(jsonFile) {
         recipes: [],
         selectedDifficulty: '',
         selectRecipe: null,
-        currentStep: 0, // Etape de la card sélectionné
+        currentEtape: 0, // Etape de la card sélectionné
 
         init() {
             this.fetchDatas(jsonFile);
@@ -35,20 +35,24 @@ export default function Recettes(jsonFile) {
         // Ouvre la card sélectionné
         openRecipe(recipe) {
             this.selectRecipe = recipe;
-            this.currentStep = 0;
+            this.currentEtape = 0;
         },
 
-        // Permet d'aller à l'étape suivante
-        nextStep() {
-            if (this.currentStep < this.selectRecipe.instructions.length - 1) {
-                this.currentStep++;
+        goToEtape(index) {
+            this.currentEtape = index;
+        },
+
+        // Permet d'aller à l'étape suivante si possible
+        nextEtape() {
+            if (this.currentEtape < this.selectRecipe.instructions.length - 1) {
+                this.currentEtape++;
             }
         },
 
-        // Permet d'aller à l'étape précédente
-        prevStep() {
-            if (this.currentStep > 0) {
-                this.currentStep--;
+        // Permet d'aller à l'étape précédente si possible
+        prevEtape() {
+            if (this.currentEtape > 0) {
+                this.currentEtape--;
             }
         }
     }

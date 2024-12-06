@@ -9,6 +9,7 @@ export default {
     extend: {
       colors: {
         fond: '#FFFAF2',
+        fondhover: '#FFAAF2',
         text: '#4a0605', 
         bouton: '#e5181b',
       },
